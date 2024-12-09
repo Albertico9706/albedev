@@ -1,0 +1,49 @@
+<button id="themeToggleBtn"></button>
+
+<script>
+    document.getElementById('themeToggleBtn')?.addEventListener('click', function() {
+        const body = document.body;
+        const currentBgColor = getComputedStyle(body).getPropertyValue('--light-bg-color');
+        const currentTextColor = getComputedStyle(body).getPropertyValue('--light-text-color');
+    
+        enum coco{
+            one="#e3ffe7",
+            two="#d9e7ff"
+        }
+        enum sea{
+            one= "#4b6cb7",
+            two= "#182848"
+        }
+
+        let newBgColor, newTextColor,gradone,gradtwo;
+        if (currentBgColor === '#ffffff') {
+            newBgColor = '#000000';
+            newTextColor = '#ffffff';
+            gradone=sea.one
+            gradtwo=sea.two
+        } else {
+            newBgColor = '#ffffff';
+            newTextColor = '#000000';
+            gradone=coco.one
+            gradtwo=coco.two
+        }
+    
+        body.style.setProperty('--light-bg-color', newBgColor);
+        body.style.setProperty('--light-text-color', newTextColor);
+        body.style.setProperty('--gradone', gradone);
+        body.style.setProperty('--gradtwo', gradtwo);
+    
+        // Guardar el tema en localStorage
+        localStorage.setItem('theme', newBgColor === '#000000' ? 'dark' : 'light');
+    });
+    </script>
+
+<style>
+    button{
+        border-radius: 50%;
+        border: solid 1px var(--light-bg-color); 
+    width: 20px;
+    height: 20px;
+    background: var(--light-text-color);
+    align-self: center;}
+</style>

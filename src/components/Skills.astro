@@ -1,0 +1,55 @@
+---
+import AstroIco from "./icons/simple_icons/AstroIco.astro"
+import GithubIco from "./icons/simple_icons/GithubIco.astro"   
+import MysqlIco from "./icons/simple_icons/MysqlIco.astro"
+import NextdotjsIco from "./icons/simple_icons/NextdotjsIco.astro"
+import NodedotjsIco from "./icons/simple_icons/NodedotjsIco.astro"
+import PostgresqlIco from "./icons/simple_icons/PostgresqlIco.astro"
+import ReactIco from "./icons/simple_icons/ReactIco.astro"
+import TailwindcssIco from "./icons/simple_icons/TailwindcssIco.astro"
+import SassIco from "./icons/simple_icons/SassIco.astro"
+---
+
+<section id="skills">
+    <h1>Skills</h1>
+    <div class="skill_container">
+        <ico><AstroIco/></ico>
+        <ico><GithubIco/></ico>
+		<ico><MysqlIco/></ico>
+		<ico><NextdotjsIco/></ico>
+        <ico><NodedotjsIco/></ico>
+		<ico><PostgresqlIco/></ico>
+        <ico><ReactIco/></ico>
+		<ico><SassIco/></ico>
+		<ico><TailwindcssIco/></ico>
+		
+	</div>
+</section>
+
+<style>
+	ico{
+		height: 40px;
+		width: 40px;
+		display: flex;
+		align-items: center;
+		transition: color .2s ease;
+		
+		
+	}
+	.skill_container{
+		display: flex;
+		max-width: 960px;
+		gap: 16px;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		margin: auto;	
+		gap: 80px;
+		padding-inline: 24px;
+	}
+	
+
+		ico:hover{
+		color:rgb(186, 160, 212);
+		
+	}
+</style>

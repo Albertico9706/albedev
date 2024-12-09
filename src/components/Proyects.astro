@@ -1,0 +1,27 @@
+---
+import SingleProyect from "./SingleProyect.astro";
+const proyects=["","" ,"" ,"","" ,"" ,"" ]
+---
+
+
+
+<section id="proyects">
+    <h1>Proyects</h1>
+    <div class="gridProyects">
+        {proyects.map(d=>{
+            return <SingleProyect name="Restaurancy" description="lorem10" src="hero.webp"/>})}
+    </div>
+
+</section>
+
+<style>
+    div{
+        display:grid;
+        gap :20px;
+        grid-template-columns: repeat(2, minmax(80px,120px));
+        justify-content: space-around;
+        justify-items: center;
+       
+    }
+</style>
+

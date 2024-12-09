@@ -19,3 +19,20 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+src/svg
+src/components/icons/out
+src/components/icons/yesicons
+src/components/icons/save
+phindCreate
+.vsCode
+
+extract-folders.js
+list-components.js
+rewrite-width.js
+script-svg-astro.js
+
+.vercel
+
+# diferente a producción
+pnpm-lock.yaml
+package.json
