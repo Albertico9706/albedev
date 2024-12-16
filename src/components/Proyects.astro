@@ -1,6 +1,6 @@
 ---
 import SingleProyect from "./SingleProyect.astro";
-const proyects=["","" ,"" ,"","" ,"" ,"" ]
+const proyects=["RemoJobs","Restaurancy" ,"" ,"","" ,"" ,"" ]
 ---
 
 
@@ -17,11 +17,15 @@ const proyects=["","" ,"" ,"","" ,"" ,"" ]
 <style>
     div{
         display:grid;
-        gap :20px;
-        grid-template-columns: repeat(2, minmax(80px,120px));
-        justify-content: space-around;
-        justify-items: center;
-       
+        gap :40px;
+        grid-template-columns:  repeat(auto-fit, minmax(240px,1fr));
     }
+
+    section{
+    }
+
+    /* @media  screen and (max-width: ){
+        
+    } */
 </style>
 

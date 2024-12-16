@@ -17,11 +17,12 @@ if (Astro.request.method === "POST") {
 ---
 
 <div class="contact-form" id="contact">
-    <h2>Contact Us</h2>
+    <h2>Contact </h2>
     <form id="contactForm" method="post">
-        <input type="text" id="name" placeholder="Your Name" name="username" required>
-        <input type="email" id="email" placeholder="Your Email" name="email" required>
-        <textarea id="message" placeholder="Your Message" name="message" required></textarea>
+        <input type="text" id="name" placeholder="Name" name="username" required>
+        <input type="email" id="email" placeholder="Email" name="email" required>
+        <small hidden>Please provide a valid email</small>
+        <textarea id="message" placeholder="Message" name="message" required></textarea>
         <SubButton/>
     </form>
     <div class="social-icons">
@@ -39,7 +40,6 @@ if (Astro.request.method === "POST") {
     border: 1px solid ;
     max-width: 400px;
     min-width: 200px ;
-    
     margin:auto;
     margin-block: 64px;
 }
@@ -56,6 +56,13 @@ if (Astro.request.method === "POST") {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+input:invalid:not(:placeholder-shown) ~small{
+ display: block ;
+ color: red;
+}
+
+
 
 
 
