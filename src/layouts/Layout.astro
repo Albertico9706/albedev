@@ -54,7 +54,7 @@ const { title } = Astro.props;
 	
 		--acent:rgb(73, 73, 255);
 		--safe:16px;
-		--navColor:50, 172, 228;
+		--navColor:var(--gradone);
 		--links-rgb: 132, 58, 206;
 		--gradone:#e3ffe7;
 		--gradtwo:#d9e7ff;
@@ -63,24 +63,54 @@ const { title } = Astro.props;
 		--base:#141316;
 		--gradone:#e3ffe7;
 		--gradtwo:#d9e7ff;
-		--neutral:#d9e7ff;
+		--neutral:#abb2c4;
 
 	}
 
 	body[dark]{
-		--acent:rgb(73, 73, 255);
+		--acent:#40f349;
 		--startSpace:16px;
-		--navColor:50, 172, 228;
+		--navColor:var(--gradone);
 		--links-rgb: 132, 58, 206;
 		--gradone:#e3ffe7;
 		--gradtwo:#d9e7ff;
 		--primary:#6d53ff;
 		--secondary:#b047f7;
 		--base:#e0e0e0;
-		--gradone:#4b6cb7;
+		--gradone:#142a5c;
 		--gradtwo:#182848;
+		--neutral:#d9e7ff;
+		
 
 	}
+
+
+	body{
+	
+	--base:#141316;
+	--base9:#141316ef;
+	--base8:#141316df;
+	--base7:#141316cf;
+	--base6:#141316bf;
+
+}
+
+body[dark]{
+	
+	--base:#e0e0e0;
+	--base9:#e0e0e0ef;
+	--base8:#e0e0e0df;
+	--base7:#e0e0e0cf;
+	--base6:#e0e0e0bf;
+
+}
+
+.base9{color: var(--base9);}
+.base8{color: var(--base8);}
+.base7{color: var(--base7);}
+.base6{color: var(--base6);}
+
+	
 
 	
 
@@ -96,6 +126,12 @@ const { title } = Astro.props;
 
 	main{
 		padding-inline: var(--safe);
+		max-width: 1240px;
+		margin-inline: auto;
+	}
+
+	section{
+		margin-block: 200px;
 	}
 
 

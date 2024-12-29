@@ -9,11 +9,11 @@ const {name,description,src}=Astro.props
 ---
 
 <article>
-    <picture>
+    <div>
         
     <img src={src} alt="">
     <h3>{name}</h3>
-    </picture>
+    </div>
     <div>
     <p>{description}</p>
     </div>
@@ -28,27 +28,42 @@ const {name,description,src}=Astro.props
         transition: transform color .4s ease;
         transform-origin: bottom;
         &:hover{
-        box-shadow: 3px 3px 20px 2px var(--acent);
+        box-shadow: 3px 3px 10px 2px #1a1a1a ;
             & img{
-            scale: 1.05;
-            backdrop-filter: blur(8px);
+            transform: scale(1.05);
+            background-color: transparent;
             }
         }
     }
 
-    div{
+    div:not(>img){
         padding: 16px;
         display: flex;
     }
+    h3,p{
+        padding-inline-start: 8px;
+ 
+    }
+
+    h3{
+        position: absolute;
+        bottom: 0;
+    }
+
+    body[dark] h3{
+        color: var(--gradone);
+    }
 
 
-    picture{
+    div:has(>img){
         position: relative;
+        height: fit-content;
+        width: 100%;
         & img{
         width: 100%;
         aspect-ratio: 16/10;
         scale: 1;
-        transition: scale .4s ease;
+        transition: transform .4s ease;
         bottom: 12px;
         }
         

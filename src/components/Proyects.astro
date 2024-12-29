@@ -1,12 +1,24 @@
 ---
+type Proyect={
+    name:string,
+    description:string,
+    github?:string;
+    demo?:string
+}
 import SingleProyect from "./SingleProyect.astro";
 const proyects=["RemoJobs","Restaurancy" ,"" ,"","" ,"" ,"" ]
+const proyectsList:Proyect[]=[
+    {
+        name:"WorkRem",
+        description:"Este proyecto me permitió consolidar habilidades en el desarrollo full-stack con **Next.js**, mejorar mis conocimientos sobre la validación de datos y la seguridad en aplicaciones web, y perfeccionar la creación de interfaces estilizadas y responsivas. Además, comprendí la importancia de implementar buenas prácticas para proteger los datos del usuario y optimizar el rendimiento de la aplicación. "
+
+    }]
 ---
 
 
 
 <section id="proyects">
-    <h1>Proyects</h1>
+    <h2>Proyects</h2>
     <div class="gridProyects">
         {proyects.map(d=>{
             return <SingleProyect name="Restaurancy" description="lorem10" src="hero.webp"/>})}
