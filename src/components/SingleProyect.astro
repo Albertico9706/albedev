@@ -9,13 +9,10 @@ const {name,description,src}=Astro.props
 ---
 
 <article>
+    <div><img src={src} alt=""><h3>{name}</h3></div>
     <div>
-        
-    <img src={src} alt="">
-    <h3>{name}</h3>
-    </div>
-    <div>
-    <p>{description}</p>
+        <p>{description}</p>
+        <button class="btn-primary">Ver detalles</button>
     </div>
 </article>
 
@@ -24,22 +21,17 @@ const {name,description,src}=Astro.props
     article{
         overflow: hidden;
         border: 1px gray;
-        box-shadow: 2px 1px 7px #1a1a1a;
-        transition: transform color .4s ease;
+        box-shadow: 0px 1px 3px 0px #1a1a1a;
+        transition: transform .4s ease;
         transform-origin: bottom;
         &:hover{
-        box-shadow: 3px 3px 10px 2px #1a1a1a ;
+            box-shadow: 1px 2px 5px 0px #1a1a1a ;
             & img{
             transform: scale(1.05);
-            background-color: transparent;
             }
         }
     }
 
-    div:not(>img){
-        padding: 16px;
-        display: flex;
-    }
     h3,p{
         padding-inline-start: 8px;
  
@@ -51,6 +43,11 @@ const {name,description,src}=Astro.props
     }
 
     body[dark] h3{
+        
+    }
+
+    body[dark] article{
+        background: var(--base) ;
         color: var(--gradone);
     }
 
@@ -66,6 +63,25 @@ const {name,description,src}=Astro.props
         transition: transform .4s ease;
         bottom: 12px;
         }
+        
+    }
+
+    
+    div:has(button) {
+        padding: 16px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+
+
+    }
+
+    button{
+        padding: 8px;
+        margin: 4px;
+        align-self: self-end;
+        
         
     }
 

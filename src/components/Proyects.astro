@@ -13,6 +13,8 @@ const proyectsList:Proyect[]=[
         description:"Este proyecto me permitió consolidar habilidades en el desarrollo full-stack con **Next.js**, mejorar mis conocimientos sobre la validación de datos y la seguridad en aplicaciones web, y perfeccionar la creación de interfaces estilizadas y responsivas. Además, comprendí la importancia de implementar buenas prácticas para proteger los datos del usuario y optimizar el rendimiento de la aplicación. "
 
     }]
+
+    const description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, placeat?"
 ---
 
 
@@ -21,7 +23,7 @@ const proyectsList:Proyect[]=[
     <h2>Proyects</h2>
     <div class="gridProyects">
         {proyects.map(d=>{
-            return <SingleProyect name="Restaurancy" description="lorem10" src="hero.webp"/>})}
+            return <SingleProyect name="Restaurancy" description={description} src="hero.webp"/>})}
     </div>
 
 </section>
@@ -30,12 +32,9 @@ const proyectsList:Proyect[]=[
     div{
         display:grid;
         gap :40px;
-        grid-template-columns:  repeat(auto-fit, minmax(240px,1fr));
+        grid-template-columns:  repeat(auto-fit,300px);
+        justify-content: center;
     }
-
-    section{
-    }
-
     /* @media  screen and (max-width: ){
         
     } */

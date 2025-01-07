@@ -52,7 +52,7 @@ const { title } = Astro.props;
 	}
 	body{
 	
-		--acent:rgb(73, 73, 255);
+		--acent:#40f349;
 		--safe:16px;
 		--navColor:var(--gradone);
 		--links-rgb: 132, 58, 206;
@@ -64,6 +64,7 @@ const { title } = Astro.props;
 		--gradone:#e3ffe7;
 		--gradtwo:#d9e7ff;
 		--neutral:#abb2c4;
+		--btn-primary:#007bff;
 
 	}
 
@@ -79,7 +80,7 @@ const { title } = Astro.props;
 		--base:#e0e0e0;
 		--gradone:#142a5c;
 		--gradtwo:#182848;
-		--neutral:#d9e7ff;
+		--neutral:#ddd;
 		
 
 	}
@@ -109,6 +110,21 @@ body[dark]{
 .base8{color: var(--base8);}
 .base7{color: var(--base7);}
 .base6{color: var(--base6);}
+.btn-primary{
+	background-color:#007bff;
+	text-decoration: none;
+	transition: background-color 0.3s ease,scale .2s ease;
+    border:none;
+	color: #fff;
+    &:active{
+        scale: .95;
+    }
+}
+
+
+.btn-primary:hover{
+	background-color: #0056b3;
+}
 
 	
 
@@ -132,6 +148,11 @@ body[dark]{
 
 	section{
 		margin-block: 200px;
+	}
+
+	section>h2:first-child{
+		margin:0;
+		padding-block: 64px;
 	}
 
 

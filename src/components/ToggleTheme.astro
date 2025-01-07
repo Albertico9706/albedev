@@ -7,12 +7,13 @@ import Moon from "./icons/material/Moon.astro"
 <div id="themeToggleBtn"><div class="sun"><Sun/></div><div class="moon"><Moon/></div></div>
 
 <script>
-    document.getElementById('themeToggleBtn')?.addEventListener('click', function() {
+    document.getElementById('themeToggleBtn')?.addEventListener('click', changeTheme);
+
+    function changeTheme() {
         const body = document.body;
         localStorage.setItem('theme', body.hasAttribute("dark") ? 'light' : 'dark');
-        body.querySelector("#themeToggleBtn")?.toggleAttribute("dark")
         body.toggleAttribute("dark")
-    });
+    }
     </script>
 
 <style>
@@ -21,16 +22,20 @@ import Moon from "./icons/material/Moon.astro"
     height:20px;
     border-radius:999px;
     transition: color 0;
-    & .moon{
-        display: none;
+    } 
+
+    body{
+        .moon{
+            display: none;
+        }
+        &[dark]{
+            & .moon{
+                display: block;
+            }
+            & .sun{
+                display: none;
+            };
+        }
+
     }
-    &[dark]{
-        & .sun{
-        display:none;
-        }
-        & .moon{
-            display: block;
-        }
-    } 
-    } 
-</style>
+    </style>
