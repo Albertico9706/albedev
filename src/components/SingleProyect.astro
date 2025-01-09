@@ -15,8 +15,8 @@ const {name,description,src,demo,github}=Astro.props
     <div><img src={src} alt=""><h3>{name}</h3></div>
     <div>
         <div>
-            <a href={github} class="github"><span><GithubIco/></span> Github</a>
-            <a href={demo} class="demo">Demo</a>
+            <a href={github} target="_blank" class="github"><span><GithubIco/></span> Github</a>
+            <a href={demo} target="_blank" class="demo">Demo</a>
         </div>
         <p>{description}</p>
     </div>
