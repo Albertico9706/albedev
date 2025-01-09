@@ -1,23 +1,68 @@
 ---
  interface Props {
-    name:string
-    description:string
-    src:string
+    name:string,
+    description:string,
+    github?:string;
+    demo?:string;
+    src?:string
 }
+import GithubIco from './icons/simple_icons/GithubIco.astro';
 
-const {name,description,src}=Astro.props
+const {name,description,src,demo,github}=Astro.props
 ---
 
 <article>
     <div><img src={src} alt=""><h3>{name}</h3></div>
     <div>
+        <div>
+            <a href={github} class="github"><span><GithubIco/></span> Github</a>
+            <a href={demo} class="demo">Demo</a>
+        </div>
         <p>{description}</p>
-        <button class="btn-primary">Ver detalles</button>
     </div>
 </article>
 
 <style>
-    
+    div:has(>p){
+        padding: 16px;
+    }
+    div a span{
+        width: 16px;
+        display: inline-block;
+        
+    }
+
+    div a{
+        background-color: #acaaaa;
+        outline: 1px #000;
+        width: 30%;
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    div a:hover{
+        color:var(--light-blue);
+        transition:color .2s ease;
+    }
+
+    div:has(>a){
+        display: flex;
+        justify-content: space-between;
+    }
+    .github div{
+
+    }
+    .demo{
+        
+    }
+
+    img{
+        aspect-ratio: 1.5;
+    }
     article{
         overflow: hidden;
         border: 1px gray;
@@ -34,21 +79,23 @@ const {name,description,src}=Astro.props
 
     h3,p{
         padding-inline-start: 8px;
+       
  
     }
 
     h3{
         position: absolute;
         bottom: 0;
+        color: var(--light-blue);
     }
 
     body[dark] h3{
         
     }
 
-    body[dark] article{
-        background: var(--base) ;
-        color: var(--gradone);
+article{
+        background: var(--gradone) ;
+        
     }
 
 
@@ -64,17 +111,6 @@ const {name,description,src}=Astro.props
         bottom: 12px;
         }
         
-    }
-
-    
-    div:has(button) {
-        padding: 16px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
-
-
     }
 
     button{

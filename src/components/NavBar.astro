@@ -1,8 +1,6 @@
 ---
 
 import ToggleTheme from './ToggleTheme.astro'
-import Sun from './icons/material/Sun.astro'
-import HomeIco from './icons/material/HomeIco.astro'
 import Contacts from './icons/material/Contacts.astro';
 import Description from './icons/material/Description.astro';
 import FolderProyects from './icons/material/FolderProyects.astro';
@@ -11,14 +9,13 @@ import SkillsIco from './icons/material/SkillsIco.astro';
 ---
 <nav >
 	<div class="nav-container">
-	<a href="/#"><div class="icosvg"><HomeIco/></div> <div class="alt-text">Home</div></a>
+	<a href="/#"><span class="logo">ALBEDEV</span></a>
 		<div class="nav-menu">
-			<div class="menu"><div class="icosvg"><Sun/></div></div>
 			<a href="#about"><div class="icosvg"><Description/></div><div class="alt-text">AboutMe</div></a>
 			<a href="#proyects"><div class="icosvg"><FolderProyects/></div> <div class="alt-text">Proyects</div></a>
 			<a href="#skills"><div class="icosvg"><SkillsIco/></div> <div class="alt-text">Skills</div></a>
 			<a href="#contact"><div class="icosvg"><Contacts/></div> <div class="alt-text">Conctact</div></a> 
-			<ToggleTheme/> 
+			<ToggleTheme/>
 		</div>
 	</div>
 		
@@ -30,7 +27,7 @@ import SkillsIco from './icons/material/SkillsIco.astro';
 		z-index: 5;
 		position: fixed;
 		width: 100%;
-		background:var(--navColor) ;
+		background:var(--gradone) ;
 		box-shadow: 0px 1px 3px 0px  var(--neutral) ;
 		
 	}
@@ -56,7 +53,7 @@ import SkillsIco from './icons/material/SkillsIco.astro';
 		text-align: center;
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: 4px;
 	}
 
 	
@@ -69,16 +66,16 @@ import SkillsIco from './icons/material/SkillsIco.astro';
 
 .menu{display:none;}
 .icosvg{
-	height:24px;
-	min-height:24px;
-	width:24px;
-	min-width:24px;
-	display: block;
+	width: 20px;
+}
+
+.logo{
+	font-weight: 700;
 }
 
 
 nav a:hover{
-		color: rgb(var(--links-rgb));
+		color: var(--light-blue);
 	}
 
 nav{animation: 0.5s fade_down ease;}
