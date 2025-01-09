@@ -7,6 +7,7 @@
     src?:string
 }
 import GithubIco from './icons/simple_icons/GithubIco.astro';
+import Chain from './icons/material/Chain.astro';
 
 const {name,description,src,demo,github}=Astro.props
 ---
@@ -16,7 +17,7 @@ const {name,description,src,demo,github}=Astro.props
     <div>
         <div>
             <a href={github} target="_blank" class="github"><span><GithubIco/></span> Github</a>
-            <a href={demo} target="_blank" class="demo">Demo</a>
+            <a href={demo} target="_blank" class="demo"><span><Chain/></span>Demo</a>
         </div>
         <p>{description}</p>
     </div>
