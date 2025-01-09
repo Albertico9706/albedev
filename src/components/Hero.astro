@@ -1,16 +1,22 @@
+---
+import Download from "./icons/out/svgrepo/Download.astro"
+---
+
 <section>
     <cite>
 
     </cite>
     <h1>&quot;La mejor forma de predecir el futuro es implementarlo&quot;</h1>
     <h3><q>David Heinemeier Hansson – creador de Ruby on Rails</q></h3>
-    
-
-    <a class="btn-primary" hreflang="/proyects" href="#proyects">Ver Proyectos</a>
+    <div><a class="btn-primary" hreflang="/proyects" href="#proyects">Ver Proyectos</a><a download="favicon.svg" href="favicon.svg"><span><Download/></span> Cv</a></div>
 
 </section>
 
 <style>
+    span{
+        width: 16px;
+        display: inline-block;
+    }
     section{
         max-width: 100%;
         display:flex;
@@ -21,10 +27,27 @@
         gap:20px;
     }
 
+    div{
+        display: flex;
+        gap: 64px;
+        max-width: 480px;
+        margin-inline: auto;
+    }
+
 
     a{
         padding:16px ;
         align-self: center;
+    }
+
+    a[download]{
+        text-decoration: none;
+        color: black;
+        border: 1px  solid rgba(128, 128, 128, 0.336);
+        display: flex;
+        &:hover{
+            background-color: var(--dark-blue);
+        }
     }
         
     h1{
